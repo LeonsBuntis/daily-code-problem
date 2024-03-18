@@ -71,3 +71,4 @@ const nums = [2,7,11,15];
 const target = 9;
 
 const result = twoSumOptimized2(nums, target);
+console.log(result);
