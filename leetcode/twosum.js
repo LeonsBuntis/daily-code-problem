@@ -57,7 +57,13 @@ var twoSumOptimized2 = function(nums, target) {
 
         if(sum === target) {
             const first = nums.indexOf(ii);
-            const second = nums.indexOf(jj, first + 1);
+            let second = nums.indexOf(jj, first + 1);
+            if(second === -1) {
+                second = nums.indexOf(jj);
+                
+                return [second, first];
+            }
+
             return [first, second];
         } else if (sum < target) {
             i++;
@@ -67,8 +73,8 @@ var twoSumOptimized2 = function(nums, target) {
     }
 };
 
-const nums = [2,7,11,15];
-const target = 9;
+const nums = [-1,-2,-3,-4,-5];
+const target = -8;
 
 const result = twoSumOptimized2(nums, target);
 console.log(result);
